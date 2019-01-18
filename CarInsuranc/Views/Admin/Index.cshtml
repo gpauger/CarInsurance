@@ -1,0 +1,50 @@
+﻿@using CarInsurance.ViewModels
+@model List<QuoteVM>
+
+<div class="flex-grow-1 no-gutters m-1">
+    <div class="card col-sm-12 col-md-10 col-lg-12 mx-auto shadow">
+        <div class="card-header text-center">
+            <h5 class="m-0">User Quotes</h5>
+        </div>
+        <div class="card-body">
+            <input type="hidden" name="Id" value="ID" />
+            <div class="row mb-3">
+                <div class="col-2">
+                    FirstName
+                </div>
+                <div class="col">
+                    LastName
+                </div>
+                <div class="col-4">
+                    EmailAddress
+                </div>
+                <div class="col">
+                    Quote
+                </div>
+            </div>
+            @foreach (var quote in Model)
+            {
+                using (Html.BeginForm("Quote", "Admin", FormMethod.Get))
+                {
+                    <input type="hidden" name="Id" value="@quote.ID" />
+                    <div class="row mb-3">
+                        <div class="col-2">
+                            @quote.FirstName
+                        </div>
+                        <div class="col">
+                            @quote.LastName
+                        </div>
+                        <div class="col-4">
+                            @quote.EmailAddress
+                        </div>
+                        <div class="col">
+                            @quote.Quote
+                        </div>
+                    </div>
+                }
+
+            }
+        </div>
+    </div>
+</div>
+

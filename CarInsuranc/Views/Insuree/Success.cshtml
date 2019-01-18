@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Success";
+}
+
+@using CarInsuranc.Models
+
+@model CarInsuranc.Models.Insuree
+<h2>Success</h2>
+<div>
+    @Html.DisplayNameFor(model => model.FirstName)
+    @Html.DisplayNameFor(model => model.LastName)
+    @Html.DisplayNameFor(model => model.Quote)
+
+</div>
+<div>
+    @Html.DisplayFor(model => model.FirstName)
+    @Html.DisplayFor(model => model.LastName)
+    @Html.DisplayFor(model => model.Quote)
+</div>
+
+
+
